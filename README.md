@@ -5,4 +5,3 @@ A landing page project.
 ## Project Structure
 
 - `websim_school.html`: Main landing page content.
-- `Dockerfile`: Configuration for containerization (WIP).
