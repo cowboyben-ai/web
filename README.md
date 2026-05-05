@@ -4,4 +4,4 @@ A landing page project.
 
 ## Project Structure
 
-- `websim_school.html`: Main landing page content.
+- `index.html`: Main landing page content.
