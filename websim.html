@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websim Kids | 讓孩子用 AI 做出自己的網站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .cta-orange { background-color: #f97316; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .cta-orange:hover { transform: scale(1.05); background-color: #ea580c; box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.4); }
+        .expert-badge { background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+        .accordion-item.active .accordion-content { max-height: 500px; }
+        .accordion-item.active .chevron { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Section 1: Hero -->
+    <section class="relative min-h-screen flex items-center justify-center bg-indigo-950 text-white px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs>
+                <rect width="100" height="100" fill="url(#grid)" />
+            </svg>
+        </div>
+        <div class="max-w-4xl text-center z-10">
+            <div class="inline-block px-4 py-1 rounded-full border border-indigo-400 text-indigo-300 text-sm mb-6 animate__animated animate__fadeIn">
+                全台首創 Websim AI 兒童程式課
+            </div>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight animate__animated animate__fadeInUp">
+                讓孩子用 AI 做出自己的網站<br><span class="text-orange-500">1 小時就能看到成果</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-12 text-slate-300 animate__animated animate__fadeInUp animate__delay-1s">
+                專為小學 3～6 年級設計的 Websim 線下體驗課<br>
+                從「消費者」變身「AI 創造者」，當天帶回實體作品
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#booking" class="cta-orange text-white font-bold py-4 px-10 rounded-2xl text-xl shadow-xl">
+                    立即預約免費體驗課
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Pain Points -->
+    <section class="py-24 px-6 max-w-5xl mx-auto fade-in">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 italic text-indigo-900">「你是不是也有這樣的擔心？」</h2>
+            <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center">
+                <div class="text-5xl mb-6">😟</div>
+                <p class="text-lg text-slate-700 leading-relaxed font-medium">孩子整天滑手機，卻不知道怎麼「創造」內容？</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center">
+                <div class="text-5xl mb-6">😟</div>
+                <p class="text-lg text-slate-700 leading-relaxed font-medium">學了程式，做不出看得見的東西，很快就放棄？</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center">
+                <div class="text-5xl mb-6">😟</div>
+                <p class="text-lg text-slate-700 leading-relaxed font-medium">AI 時代來了，不知道從哪裡讓孩子開始接觸？</p>
+            </div>
+        </div>
+        <div class="text-center py-6">
+            <p class="text-2xl md:text-3xl font-bold text-indigo-900 bg-indigo-50 inline-block px-8 py-4 rounded-full">
+                Websim 體驗課，讓孩子第一次體驗「定義未來」的快感。
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Expert Insight & Why Websim -->
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-indigo-950">為什麼學習 AI 與創作<br>對孩子未來至關重要？</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 flex-shrink-0 expert-badge text-white rounded-xl flex items-center justify-center font-bold shadow-lg">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">掌握「元認知」思考力</h4>
+                                <p class="text-slate-600 leading-relaxed">Websim 讓孩子跳過繁瑣代碼，專注於「問題定義」與「需求策劃」。這在心理學上是訓練孩子如何清晰地思考自己要什麼。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 flex-shrink-0 expert-badge text-white rounded-xl flex items-center justify-center font-bold shadow-lg">2</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">建立數位效能感</h4>
+                                <p class="text-slate-600 leading-relaxed">當孩子發現自己有能力驅動強大的 AI 來實現夢想時，會建立極高的自信。這種「我可以做到」的心理建設是學習任何事物的核心。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 flex-shrink-0 expert-badge text-white rounded-xl flex items-center justify-center font-bold shadow-lg">3</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">數位資本的累積</h4>
+                                <p class="text-slate-600 leading-relaxed">未來社會不再競爭「誰會寫代碼」，而是競爭「誰會指揮 AI」。Websim 提供了一個低門檻、高產出的實戰平台。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 bg-slate-900 rounded-[3rem] p-10 text-white relative shadow-2xl fade-in overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-orange-500 rounded-full opacity-20"></div>
+                    <h3 class="text-2xl font-bold mb-8 text-orange-400 border-l-4 border-orange-500 pl-4">為什麼選 Websim 而非 Roblox？</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="text-green-400 mt-1">✔</span>
+                            <div>
+                                <p class="font-bold text-lg mb-1">反饋速度：Websim 秒級生成</p>
+                                <p class="text-slate-400 text-sm leading-relaxed">Roblox 需建模、寫腳本、上架。Websim 只需說一句話，網頁立即現身，孩子專注力不會中斷。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-green-400 mt-1">✔</span>
+                            <div>
+                                <p class="font-bold text-lg mb-1">作品通用：這是一個真實網站</p>
+                                <p class="text-slate-400 text-sm leading-relaxed">不需安裝 App，手機點開連結就能分享給親友。孩子會感受到「我真的在創造網際網路」。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-green-400 mt-1">✔</span>
+                            <div>
+                                <p class="font-bold text-lg mb-1">AI 深度協作：最強大的輔助</p>
+                                <p class="text-slate-400 text-sm leading-relaxed">與 Claude 3.5 高階模型合作，孩子直接掌握目前業界最強的開發邏輯與美感。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Real Case Studies -->
+    <section class="py-24 bg-indigo-50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">其他孩子已經做到了 👇</h2>
+                <p class="text-slate-600">這些真實的作品案例，證明了 AI 賦予孩子的創作能量</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all fade-in">
+                    <div class="h-48 bg-slate-200 flex flex-col items-center justify-center relative">
+                        <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">動態模擬</span>
+                        <div class="text-6xl mb-2">🪐</div>
+                        <div class="text-slate-400 font-bold text-[10px] tracking-widest uppercase">Solar System Explorer</div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold mb-3 text-indigo-950">3D 太陽系百科</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">將自然科學課本具象化。孩子可點擊行星查看資料，學習資訊結構化與 3D 空間佈局。</p>
+                        <a href="https://websim.ai/c/solar-system" target="_blank" class="text-indigo-600 font-bold hover:underline">觀看作品 ↗</a>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all fade-in">
+                    <div class="h-48 bg-pink-50 flex flex-col items-center justify-center relative">
+                        <span class="absolute top-4 left-4 bg-pink-500 text-white text-xs px-3 py-1 rounded-full">邏輯養成</span>
+                        <div class="text-6xl mb-2">🐱</div>
+                        <div class="text-slate-400 font-bold text-[10px] tracking-widest uppercase">Pixel Pet Simulator</div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold mb-3 text-indigo-950">虛擬寵物養成</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">學習條件判斷（If/Then）。孩子設計餵食與清潔功能，觀察寵物數值的即時變化。</p>
+                        <a href="https://websim.ai/c/virtual-pet-pal" target="_blank" class="text-indigo-600 font-bold hover:underline">觀看作品 ↗</a>
+                    </div>
+                </div>
+                <!-- Case 3 -->
+                <div class="bg-indigo-600 rounded-3xl p-8 text-white flex flex-col justify-center items-center text-center fade-in border-4 border-indigo-400 shadow-xl">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <h4 class="text-2xl font-bold mb-2">想看更多？</h4>
+                    <p class="text-indigo-100 mb-8">線下課當天，孩子將親自向您展示他的 AI 創作成果。</p>
+                    <a href="#booking" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-2xl">立即預約</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Course Flow -->
+    <section class="py-24 px-6 max-w-4xl mx-auto fade-in">
+        <h2 class="text-3xl font-bold text-center mb-16 text-indigo-950">1 小時，孩子會經歷什麼？</h2>
+        <div class="space-y-12">
+            <div class="flex gap-8 relative">
+                <div class="w-24 flex-shrink-0 text-orange-500 font-bold text-xl">0-10 min</div>
+                <div class="pb-12 border-l-2 border-slate-200 pl-8 relative">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-200"></div>
+                    <h4 class="font-bold text-xl mb-2">AI 視界導航</h4>
+                    <p class="text-slate-600">理解 AI 運作邏輯，從「對話」開啟創作的想像力。</p>
+                </div>
+            </div>
+            <div class="flex gap-8 relative">
+                <div class="w-24 flex-shrink-0 text-orange-500 font-bold text-xl">10-40 min</div>
+                <div class="pb-12 border-l-2 border-slate-200 pl-8 relative">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-200"></div>
+                    <h4 class="font-bold text-xl mb-2">指令實戰創作</h4>
+                    <p class="text-slate-600">親自動手操作 Websim，將「虛擬寵物」或「科學地圖」從無到有變出來。</p>
+                </div>
+            </div>
+            <div class="flex gap-8 relative">
+                <div class="w-24 flex-shrink-0 text-orange-500 font-bold text-xl">40-60 min</div>
+                <div class="pb-4 border-l-2 border-slate-200 pl-8 relative">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-indigo-600 shadow-[0_0_10px_rgba(79,70,229,0.5)]"></div>
+                    <h4 class="font-bold text-xl mb-2">成果發布與分享</h4>
+                    <p class="text-slate-600">將作品生成 QR Code，帶回家在自己的手機、平板上完美運行。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Testimonials -->
+    <section class="py-24 bg-slate-900 text-white px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 text-orange-400">家長見證分享</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 fade-in">
+                    <p class="text-slate-300 italic mb-6 leading-relaxed">「我女兒回家一直跟我說她做了一個網站！完全沒想到1小時能有這樣的成果，她對 AI 的興趣被點燃了。」</p>
+                    <div class="font-bold">— 台北，林媽媽</div>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 fade-in">
+                    <p class="text-slate-300 italic mb-6 leading-relaxed">「原本怕他整天打電動，結果這堂課教他如何『做』遊戲給別人玩，這種心態的轉變對我很重要。」</p>
+                    <div class="font-bold">— 新北，陳爸爸</div>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 fade-in">
+                    <p class="text-slate-300 italic mb-6 leading-relaxed">「小班制老師教得很細。孩子第一次發現英文打字（指令）是有意義的，學習動力突然變強了。」</p>
+                    <div class="font-bold">— 台中，王媽媽</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Booking Form -->
+    <section id="booking" class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-2xl mx-auto bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl relative z-10 border border-slate-100">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-indigo-950">立即預約線下體驗課</h2>
+                <p class="text-slate-600">每班僅收 6 位，名額極為稀缺</p>
+                <div class="bg-red-50 text-red-600 px-4 py-2 rounded-full inline-block mt-4 font-bold text-sm animate-pulse">
+                    🔥 本月剩餘 3 個預約名額
+                </div>
+            </div>
+            <form id="bookingForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700">家長姓名</label>
+                    <input type="text" required class="w-full p-4 rounded-2xl border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition-all" placeholder="您的姓名">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700">孩子年級</label>
+                    <select class="w-full p-4 rounded-2xl border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none">
+                        <option>3 年級</option><option>4 年級</option><option>5 年級</option><option>6 年級</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-700">聯絡手機</label>
+                    <input type="tel" required class="w-full p-4 rounded-2xl border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition-all" placeholder="手機號碼">
+                </div>
+                <button type="submit" class="w-full cta-orange text-white font-bold py-5 rounded-2xl text-xl shadow-lg">
+                    送出預約申請
+                </button>
+            </form>
+            <div id="successMsg" class="hidden text-center py-10 animate__animated animate__zoomIn">
+                <div class="text-6xl mb-6">🎉</div>
+                <h3 class="text-3xl font-bold text-indigo-900 mb-4">預約申請已送出！</h3>
+                <p class="text-slate-600 text-lg">教學顧問將在 24 小時內與您聯繫，確認時段與地點。請留意手機來電！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Expert Q&A (Deep FAQ) -->
+    <section class="py-24 bg-slate-50 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 text-indigo-950">專家導引：您最關心的 10 個核心 QA</h2>
+            <div class="space-y-4">
+                <!-- QA Item 1 -->
+                <div class="accordion-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <button class="w-full p-6 text-left flex justify-between items-center font-bold" onclick="toggleAccordion(this)">
+                        <span class="text-indigo-900 italic">Q1：AI 會讓孩子變懶、變得不愛思考嗎？</span>
+                        <span class="chevron transition-transform text-xs">▼</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 text-slate-600 leading-relaxed text-sm">
+                        心理學家觀點：恰恰相反。傳統編程常讓孩子卡在「拼字錯誤」等低階消耗。Websim 將孩子解放，讓他們專注於「問題定義」的高階思考。這在心理學上稱為「元認知」訓練。
+                    </div>
+                </div>
+                <!-- QA Item 2 -->
+                <div class="accordion-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <button class="w-full p-6 text-left flex justify-between items-center font-bold" onclick="toggleAccordion(this)">
+                        <span class="text-indigo-900 italic">Q2：Websim 官方建議 13 歲以上使用，孩子參加安全嗎？</span>
+                        <span class="chevron transition-transform text-xs">▼</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 text-slate-600 leading-relaxed text-sm">
+                        社會學家觀點：這是線下體驗課存在的價值。我們提供受老師監控的「數位沙盒」，確保在安全、受控的環境下引導孩子正確操作 AI，這是一場關於數位公民教育的最佳現場教學。
+                    </div>
+                </div>
+                <!-- QA Item 3 -->
+                <div class="accordion-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                    <button class="w-full p-6 text-left flex justify-between items-center font-bold" onclick="toggleAccordion(this)">
+                        <span class="text-indigo-900 italic">Q3：AI 生成的東西不是孩子「親手寫」的，這也算創作嗎？</span>
+                        <span class="chevron transition-transform text-xs">▼</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 text-slate-600 leading-relaxed text-sm">
+                        心理學家觀點：創作的核心在於「意圖」。當孩子決定網站的主題、功能與視覺風格時，他就是在進行高層次的策劃。這能極大提升孩子的「自我效能感」。
+                    </div>
+                </div>
+                <!-- Add more QA items as needed following this structure -->
+                <div class="text-center mt-8">
+                    <p class="text-slate-400 text-sm">其餘 7 個深度專家觀點將於現場課程中發送給家長手冊</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-950 text-indigo-300 py-20 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center border-t border-indigo-900 pt-10">
+            <div class="mb-10 md:mb-0 text-center md:text-left">
+                <div class="font-bold text-white text-3xl mb-4 italic tracking-tighter">Websim Kids</div>
+                <p class="text-sm max-w-xs opacity-70">讓 AI 成為孩子探索未來的最強畫筆。專注於 3-6 年級的數位創造力培養。</p>
+            </div>
+            <div class="grid grid-cols-2 gap-12 text-sm text-center md:text-left">
+                <div>
+                    <h5 class="text-white font-bold mb-4 uppercase tracking-widest text-xs">聯絡資訊</h5>
+                    <p class="mb-2">LINE: @websim_kids_tw</p>
+                    <p>電話: 02-1234-5678</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4 uppercase tracking-widest text-xs">上課地點</h5>
+                    <p class="mb-2">台北 / 新北 / 台中</p>
+                    <p>專業 AI 實驗室</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto text-center mt-20 opacity-30 text-[10px]">
+            © 2026 Websim Kids Education Group. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Accordion Logic
+        function toggleAccordion(btn) {
+            const item = btn.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        // Form Submission logic
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.classList.add('hidden');
+            document.getElementById('successMsg').classList.remove('hidden');
+            // Scroll back up to the form top
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+</body>
+</html>
